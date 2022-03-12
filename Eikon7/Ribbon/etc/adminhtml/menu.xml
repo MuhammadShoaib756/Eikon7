@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Eikon7_Ribbon::ribbon" title="Ribbons" module="Eikon7_Ribbon" sortOrder="10"
+             parent="Magento_Backend::marketing" resource="Eikon7_Ribbon::ribbon"/>
+        <add id="Eikon7_Ribbon::allribbon" title="All Ribbons" module="Eikon7_Ribbon" sortOrder="20"
+             parent="Eikon7_Ribbon::ribbon" action="ribbon/ribbon/index" resource="Eikon7_Ribbon::allribbon"/>
+    </menu>
+</config>

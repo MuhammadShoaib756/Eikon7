@@ -1,0 +1,9 @@
+<?php
+/** @var \Eikon7\Ribbon\Block\Ribbon $block */
+/** @var Eikon7\Ribbon\Model\Ribbon $activeRibbon */
+
+$activeRibbon = $block->getActiveRibbon();
+?>
+<?php if($activeRibbon): ?>
+    <span><?= $activeRibbon->getTitle() ?></span>
+<?php endif; ?>

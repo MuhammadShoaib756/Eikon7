@@ -1,0 +1,17 @@
+{
+    "eikon7_page_ribbon_record": {
+        "column": {
+            "entity_id": true,
+            "title": true,
+            "description": true,
+            "link": true,
+            "band_color": true,
+            "from_date": true,
+            "to_date": true,
+            "pages_to_display": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

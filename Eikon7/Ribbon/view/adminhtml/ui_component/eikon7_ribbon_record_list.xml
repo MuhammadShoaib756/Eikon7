@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">eikon7_ribbon_record_list.eikon7_ribbon_record_list_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>ribbons_grid_columns</spinner>
+        <deps>
+            <dep>eikon7_ribbon_record_list.eikon7_ribbon_record_list_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="create">
+                <url path="*/*/addribbon"/>
+                <class>primary</class>
+                <label translate="true">Create New Ribbon</label>
+            </button>
+        </buttons>
+    </settings>
+    <dataSource name="customer_online_grid_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">ribbon_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider"
+                      name="eikon7_ribbon_record_list_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="ribbons_grid_columns">
+        <column name="entity_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="title">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Title</label>
+            </settings>
+        </column>
+        <column name="description">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description</label>
+            </settings>
+        </column>
+        <column name="link">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">link</label>
+            </settings>
+        </column>
+        <column name="band_color">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Band Color</label>
+            </settings>
+        </column>
+        <column name="from_date">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">From Date</label>
+            </settings>
+        </column>
+        <column name="to_date">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">To Date</label>
+            </settings>
+        </column>
+        <column name="pages_to_display" class="Magento\Customer\Ui\Component\Listing\Column\Websites"
+                component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="Eikon7\Ribbon\Model\PageOptions"/>
+                <filter>select</filter>
+                <editor>
+                    <editorType>select</editorType>
+                </editor>
+                <dataType>select</dataType>
+                <label translate="true">Pages To Display</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Eikon7\Ribbon\Ui\Component\Listing\Ribbon\Column\Action">
+            <settings>
+                <indexField>ribbon_id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

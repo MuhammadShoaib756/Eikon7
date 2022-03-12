@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Eikon7\Ribbon\Api\Data\RibbonInterface"
+                type="Eikon7\Ribbon\Model\Ribbon"/>
+    <preference for="Eikon7\Ribbon\Api\RibbonRepositoryInterface"
+                type="Eikon7\Ribbon\Model\Repository\RibbonRepository"/>
+
+    <virtualType name="Eikon7\Ribbon\Model\ResourceModel\Ribbon\Ribbon\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">eikon7_page_ribbon_record</argument>
+            <argument name="resourceModel" xsi:type="string">Eikon7\Ribbon\Model\ResourceModel\Ribbon</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="eikon7_ribbon_record_list_data_source"
+                      xsi:type="string">Eikon7\Ribbon\Model\ResourceModel\Ribbon\Ribbon\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

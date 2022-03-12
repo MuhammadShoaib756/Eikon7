@@ -1,0 +1,16 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="eikon7_page_ribbon_record">
+        <column xsi:type="int" name="entity_id" unsigned="false" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="varchar" name="title" nullable="false" comment="Ribbon Title"/>
+        <column xsi:type="text" name="description" nullable="true" comment="Ribbon Description"/>
+        <column xsi:type="varchar" name="link" nullable="true" comment="Ribbon Link"/>
+        <column xsi:type="varchar" name="band_color" nullable="false" comment="Band Color"/>
+        <column xsi:type="text" name="from_date" nullable="false" comment="Start date"/>
+        <column xsi:type="text" name="to_date" nullable="false" comment="To date"/>
+        <column xsi:type="varchar" name="pages_to_display" nullable="false" comment="Pages to display"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>
